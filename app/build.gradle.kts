@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.laboratorio05"
-        minSdk = 24
+        minSdk = 28
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -50,9 +50,12 @@ android {
 }
 
 dependencies {
+    implementation(libs.protolite.well.known.types)
+    implementation(libs.car.ui.lib)
     val nav_version = "2.8.0"
 
     // Jetpack Compose integration
+
     implementation("androidx.navigation:navigation-compose:$nav_version")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -63,6 +66,10 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.navigation.compose)
+    implementation ("androidx.compose.material:material-icons-extended:1.4.3")
+    implementation ("androidx.car.app:app:1.2.0-alpha01")
+    implementation ("com.google.accompanist:accompanist-pager:0.24.13-rc")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -70,4 +77,5 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
 }

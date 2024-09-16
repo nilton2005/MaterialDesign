@@ -13,9 +13,10 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavHostController
 
 @Composable
-fun CustomBottomBar() {
+fun CustomBottomBar( navController: NavHostController) {
     BottomAppBar(
 
     ) {
@@ -24,22 +25,22 @@ fun CustomBottomBar() {
             horizontalArrangement = Arrangement.SpaceAround
         ){
 
-            IconButton(onClick = { print("Build") }) {
+            IconButton(onClick = { navController.navigate("settings") }) {
                 Icon(Icons.Filled.Build, contentDescription = "Build description")
             }
-            IconButton(onClick = { print("Menu") }) {
+            IconButton(onClick = {navController.navigate("menu") }) {
                 Icon(
                     Icons.Filled.Menu,
                     contentDescription = "Menu description",
                 )
             }
-            IconButton(onClick = { print("Favorite") }) {
+            IconButton(onClick = { navController.navigate("favorite") }) {
                 Icon(
                     Icons.Filled.Favorite,
                     contentDescription = "Favorite description",
                 )
             }
-            IconButton(onClick = { print("Delete") }) {
+            IconButton(onClick = { navController.navigate("delete") }) {
                 Icon(
                     Icons.Filled.Delete,
                     contentDescription = "Delete description",

@@ -36,6 +36,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.laboratorio05.R
@@ -85,7 +86,8 @@ fun Carousel(images: List<Int>, currentIndex: Int, onImageChange: (Int) -> Unit)
             contentDescription = "Singer Image",
             modifier = Modifier
                 .clip(CircleShape)
-                .width(300.dp)
+                .width(300.dp),
+            contentScale = ContentScale.Crop
         )
     }
 
